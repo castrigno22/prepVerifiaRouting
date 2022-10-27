@@ -1,5 +1,18 @@
 <div>
 <label>Product Name:</label><br>
-<input #query><br>
-<button (click)="(query)">Search</button>
+<input type = "text" #query><br>
+<button (click)="submit(query)">Search</button>
 </div>
+<div *ngIf="results">
+    <div class="row">
+    <div class="col-sm-6 col-md-4 mb-5" *ngFor="let t of results">
+    <div class="thumbnail">
+    <div class="content">
+    <img src="{{t.image_url}}" class="img-fluid" alt=""> 
+    <h1 >{{t.name}}</h1> 
+    <h1> {{t.id}} </h1> 
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
